@@ -1,0 +1,42 @@
+
+    <title>Wow, you're here</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #button {
+            display: none;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="messages"></div>
+    <button id="button">Is this what you came here for?</button>
+
+    <script>
+        const messages = document.getElementById("messages");
+        const button = document.getElementById("button");
+
+        setTimeout(() => {
+            messages.innerText = "Hello?";
+            setTimeout(() => {
+                messages.innerText += "\n\nWhy are you doing this?";
+                setTimeout(() => {
+                    button.style.display = "inline-block";
+                }, 5000);
+            }, 5000);
+        }, 5000);
+
+        button.addEventListener("click", () => {
+            const hiddenMessage = "@agloe12776";
+            navigator.clipboard.writeText(hiddenMessage);
+        });
+    </script>
+</body>
+</html>
